@@ -21,6 +21,7 @@ import time
 radius = 1000 * 2
 nodes = 11
 color = color_rgb(0, 255, 0)
+rad = 0
 
 win = GraphWin("HexoSphere", 300, 300)
 win.setBackground(color_rgb(255, 255, 255))
@@ -31,12 +32,13 @@ for i in range(nodes):
     for j in range(nodes):
         x2 = 150 + radius * math.sin(j*3.14*360)/18
         y2 = 150 + radius * math.cos(j*3.14*360)/18
-        circle = Circle(Point(x2, y2), 1)
-        #circle.setFill(color)
-        line = Line(Point(x1,y1), Point(x2,y2))
-        line.setFill(color)
+        circle = Circle(Point(x2, y2), rad)
+        rad += 1
+        circle.setOutline(color)
+        #line = Line(Point(x1,y1), Point(x2,y2))
+        #line.setFill(color)
         circle.draw(win)
-        line.draw(win)
+        #line.draw(win)
         time.sleep(0.1)
 
 
