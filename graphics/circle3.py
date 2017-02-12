@@ -19,25 +19,25 @@ import time
 import random
 
 
-radius = 100
-nodes = 11 * 2  # increase the nodes for magic
+radius = 1000
+nodes = 11   # increase the nodes for magic
 color = color_rgb(0, 255, 0)
-rad = 1 + 1
+rad = 11
 
-win = GraphWin("HexoSphere", 300, 300)
+win = GraphWin("Circle", 300, 300)
 win.setBackground(color_rgb(255, 255, 255))
 
 for i in range(nodes):
     #color = color_rgb(random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
     x1 = 150 + radius * math.sin(i*3.14*360)/18
     y1 = 150 + radius * math.cos(i*3.14*360)/18
-    rad += 1
+    rad -= 1
     for j in range(nodes):
         color = color_rgb(random.randrange(0,255),random.randrange(0,255),random.randrange(0,255))
         x2 = 150 + radius * math.sin(j*3.14*360)/18
         y2 = 150 + radius * math.cos(j*3.14*360)/18
         circle = Circle(Point(x2, y2), rad)
-        radius += 7
+        radius -= 7
         #circle.setOutline(color)
         circle.setFill(color)
         #line = Line(Point(x1,y1), Point(x2,y2))

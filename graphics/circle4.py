@@ -24,7 +24,7 @@ nodes = 11   # increase the nodes for magic
 color = color_rgb(0, 255, 0)
 rad = 11
 
-win = GraphWin("HexoSphere", 300, 300)
+win = GraphWin("Circle", 300, 300)
 win.setBackground(color_rgb(255, 255, 255))
 
 for i in range(nodes):
